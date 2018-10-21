@@ -7,14 +7,32 @@ public class Einstiegsbeispiel {
         Scanner S1 = new Scanner(System.in);
         String Puffer = S1.next();
 
-        System.out.println(isPalindrome(Puffer));
+        boolean boole = digitTest(Puffer);
 
 
+        if (!boole) {
+
+            System.out.println(isPalindrome(Puffer));
+        }
+
+    }
+    public static boolean digitTest (String S1){
+        char [] arr1 = S1.toCharArray();
+
+        for (int i = 0; i <arr1.length ; i++) {
+            if (Character.isDigit(arr1[i]))
+            {
+                System.out.println("In der Eingabe befindet sich eine Zahl!");
+                return true;
+            }
+        }
+        return false;
     }
 
     public static int isPalindrome (String Puffer){
         int pali = 1;
         char [] arr1 = Puffer.toCharArray();
+
 
         for (int i = 0 ; i <arr1.length/2 ; i++) {
             if (arr1 [i] != arr1 [(arr1.length-1)-i])
