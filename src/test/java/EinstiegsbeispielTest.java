@@ -33,9 +33,10 @@ class EinstiegsbeispielTest {
         int y = x.isPalindrome("Peter");
         assertEquals(0,y);
     }
+
     @Test
     public void invalidInput(){
-        boolean y = x.digitTest("123");
-        assertEquals(true,y);
+        int y = x.isPalindrome("12321");
+        assertEquals(0,y);
     }
 }
